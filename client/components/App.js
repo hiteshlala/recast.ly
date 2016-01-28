@@ -3,21 +3,30 @@ class  App extends React.Component  {
     super(props);
 
     this.state = {
-      currentVid: exampleVideoData[0],
+      currentVid: 0,
       vidList: exampleVideoData
-    }
-
+    };
   }
+
+  onTitleClick(value) {
+    console.log("I got clicked", value);
+    this.setState({
+      currentVid: value
+    });
+  }
+
+
+
 
   render () {
     return (
       <div>
         <Nav />
         <div className="col-md-7">
-          <VideoPlayer vid={exampleVideoData[0]}/>
+          <VideoPlayer vid={this.state.vidList[this.state.currentVid]}/>
         </div>
         <div className="col-md-5">
-          <VideoList vidlis={exampleVideoData}/>
+          <VideoList vidlis={this.state.vidList} click={this.onTitleClick.bind(this)}/>
         </div>
       </div>
     );
