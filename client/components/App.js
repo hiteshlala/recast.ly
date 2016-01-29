@@ -4,7 +4,7 @@ class  App extends React.Component  {
 
     this.state = {
       currentVid: 0,
-      vidList: exampleVideoData
+      vidList: []
     };
   }
 
@@ -14,6 +14,20 @@ class  App extends React.Component  {
       currentVid: value
     });
   }
+ 
+  
+
+  addVideosToVidList () {
+    this.setState( {
+      currentVid: 0,
+      vidList: data
+    });
+  }
+
+
+  componentDidMount() {
+    this.getYouTubeVideos('cats');
+  }
 
   getYouTubeVideos(query) {
     var options = {
@@ -21,9 +35,24 @@ class  App extends React.Component  {
       max: 5,
       query: query
     };
+
+    searchYouTube(options, (data) => {
+      console.log("what is this", this);
+      console.log("data is", data);
+      this.setState ({
+        currentVid: 0,
+        vidList: data.items
+      })
+    }
+    );
   }
 
+  
+
+  
+
   render () {
+    
     return (
       <div>
         <Nav />
@@ -56,4 +85,7 @@ ReactDOM.render(<App/>, document.getElementById('app'));
 // );
 
 // ReactDOM.render(<App/>, document.getElementById('app'));
+
+
+//exampleVideoData
 

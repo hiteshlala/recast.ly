@@ -18,6 +18,7 @@ $.ajax({
 
   success: function(data) {
     console.log("GET recieved ", data);
+    callback(data);
   },
 
   error: function(data) {
