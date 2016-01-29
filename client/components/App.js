@@ -15,7 +15,7 @@ class  App extends React.Component  {
     });
   }
  
-  
+
 
   addVideosToVidList () {
     this.setState( {
@@ -47,6 +47,7 @@ class  App extends React.Component  {
     );
   }
 
+
   
 
   
@@ -55,7 +56,7 @@ class  App extends React.Component  {
     
     return (
       <div>
-        <Nav />
+        <Nav grab={ _.debounce((input) => this.getYouTubeVideos(input), 500)}/>
         <div className="col-md-7">
           <VideoPlayer vid={this.state.vidList[this.state.currentVid]}/>
         </div>

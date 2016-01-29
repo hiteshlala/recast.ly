@@ -1,7 +1,7 @@
-var Nav = () => (
+var Nav = ({grab}) => (
   <nav className="navbar">
     <div className="col-md-6 col-md-offset-3">
-      <Search />
+      <Search grab={grab}/>
     </div>
   </nav>
 );
