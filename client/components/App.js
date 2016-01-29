@@ -15,8 +15,13 @@ class  App extends React.Component  {
     });
   }
 
-
-
+  getYouTubeVideos(query) {
+    var options = {
+      key: 'AIzaSyDhU2u_n7yn69At7CggqnfBpiP78k4yElI',
+      max: 5,
+      query: query
+    };
+  }
 
   render () {
     return (
@@ -52,7 +57,3 @@ ReactDOM.render(<App/>, document.getElementById('app'));
 
 // ReactDOM.render(<App/>, document.getElementById('app'));
 
-/*
-API key for my laptop assosciated with my gmail: AIzaSyDJTOorM_USaBhkr4_S_909zlMYplZ8qFo
-
-*/
