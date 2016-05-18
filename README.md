@@ -1,6 +1,19 @@
-#recast.ly
-This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
+# Recast.ly
 
-Uses React Native to implement a simplified YouTube player and search bar.
+> Implements a simplified YouTube player and search bar.
 
-Run with live-server.
+## Details
+
+*  This is a project I completed as a student at [hackreactor](http://hackreactor.com).
+*  This project was worked on with a pair.
+*  Implemented using React native.
+*  Has no back end, live-server is used to mimic a server.
+
+## Installing Dependencies And Running
+
+From witin the root directory:
+
+```sh
+bower install
+live-server
+``` 
